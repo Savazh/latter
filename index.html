@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1b1021">
+  <meta name="description" content="Um joguinho e uma surpresa só pra você.">
+  <title>Latter • Pega esse coração!</title>
+  <link rel="icon" href="./assets/flecha.png">
+  <link rel="stylesheet" href="./style.css?v=2">
+  <script src="./game.js?v=2" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <span class="wordmark"><span class="stamp" aria-hidden="true">♥</span> latter</span>
+      <span class="dedication">Pra você, meu bem <span aria-hidden="true">✦</span></span>
+    </header>
+
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">Pega esse <em>coração!</em></h1>
+      <p>Se conseguir pegar, tem uma surpresa te esperando.</p>
+    </section>
+
+    <section class="game" aria-label="Jogo do coração">
+      <div class="scoreboard">
+        <div class="stage-label"><span class="status-light" aria-hidden="true"></span><span id="stage-label">Pronta, lindinha?</span></div>
+        <dl class="scores">
+          <div><dt>Rodada</dt><dd id="round">01</dd></div>
+          <div><dt>Tempo</dt><dd id="timer" role="timer" aria-live="off">0,00<span> s</span></dd></div>
+          <div><dt>Recorde</dt><dd id="record">—</dd></div>
+        </dl>
+      </div>
+      <div class="arena" id="arena" data-state="ready" role="group" aria-label="Área do jogo" aria-describedby="controls">
+        <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="decor" aria-hidden="true">
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+          <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+          <span class="spark s4">✧</span><span class="spark s5">✦</span><span class="spark s6">✧</span>
+          <span class="phrase p1">que saudade</span>
+          <span class="phrase p2">sorriso lindo</span>
+          <span class="phrase p3">cheirinho bom</span>
+          <span class="phrase p4">um xodó</span>
+        </div>
+
+        <button class="heart" id="heart" type="button" aria-label="Pegar o coração" tabindex="-1" disabled>
+          <span class="heart-shape" aria-hidden="true"></span>
+        </button>
+        <img class="keyboard-arrow" id="keyboard-arrow" src="./assets/flecha.png" alt="" hidden>
+        <div class="confetti" id="confetti" aria-hidden="true"></div>
+        <p class="near-miss" id="near-miss" aria-hidden="true" hidden>Quase, lindinha!</p>
+
+        <section class="prize" id="prize" aria-labelledby="prize-title" hidden>
+          <h2 id="prize-title">Pegou, meu bem!</h2>
+          <p id="result"></p>
+          <p class="round-note" id="round-note"></p>
+          <button class="gift" id="gift" type="button" aria-label="Abrir o presente">
+            <span class="gift-box" aria-hidden="true"><i class="gift-bow"></i><i class="gift-lid"></i></span>
+          </button>
+          <p class="gift-caption" aria-hidden="true">Toque pra abrir</p>
+        </section>
+
+        <section class="gate" id="gate" aria-labelledby="gate-title" hidden>
+          <span class="stamp" aria-hidden="true">♥</span>
+          <h2 id="gate-title">Um presente pra você</h2>
+          <form id="unlock" method="post">
+            <label for="first-name">Qual é o seu primeiro nome?</label>
+            <div class="unlock-fields">
+              <input id="first-name" type="text" maxlength="60" required autocomplete="off" autocapitalize="words" spellcheck="false" aria-describedby="unlock-status">
+              <button class="action" type="submit">Ver meu presente</button>
+            </div>
+            <p id="unlock-status" role="status"></p>
+          </form>
+        </section>
+
+        <section class="reveal" id="reveal" aria-labelledby="reveal-title" hidden>
+          <div class="photos">
+            <figure><img id="photo-1" width="960" height="1280" alt="Nós dois deitados e rindo juntos"><figcaption>Teu sorriso</figcaption></figure>
+            <figure><img id="photo-2" width="960" height="1280" alt="Nós dois abraçados e sorrindo à noite"><figcaption>Nossas risadas</figcaption></figure>
+          </div>
+          <div class="letter">
+            <h2 id="reveal-title" tabindex="-1">Oi, meu bem.</h2>
+            <p>Gosto do seu jeito, das nossas risadas e de como o tempo passa voando quando tô com você.</p>
+            <p>Um beijo.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="toolbar">
+        <p id="controls"><span class="desktop-tip"><img src="./assets/flecha.png" alt=""> Clique no coração. No teclado, use as setas e o espaço.</span><span class="touch-tip">Toque no coração antes que ele fuja.</span></p>
+        <button class="action" id="start" type="button"><span aria-hidden="true">✦</span> Começar o jogo</button>
+        <button class="action action-secondary" id="assist" type="button" hidden>Quer uma ajudinha?</button>
+        <button class="action" id="replay" type="button" hidden><span aria-hidden="true">↻</span> Jogar de novo</button>
+      </div>
+    </section>
+
+    <footer><span aria-hidden="true">✧</span> Feito com carinho, só pra te ver sorrir. <span aria-hidden="true">✧</span></footer>
+    <p class="sr-only" id="announcement" role="status"></p>
+    <noscript><p>Ative o JavaScript pra brincar.</p></noscript>
+  </main>
+</body>
+</html>
